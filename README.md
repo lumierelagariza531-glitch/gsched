@@ -122,28 +122,6 @@ php artisan serve
 
 Visit `http://localhost:8000` in your browser.
 
-## Demo Credentials
-
-After running the seeders, you can log in with:
-
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@g-sched.test | password |
-| Guidance Associate | guidance@g-sched.test | password |
-| Student | student@g-sched.test | password |
-
-## Google Calendar Integration (Optional)
-
-To enable Google Calendar synchronization:
-
-1. Create a Google Cloud Project
-2. Enable Google Calendar API
-3. Create OAuth 2.0 credentials
-4. Add to `.env`:
-```env
-GOOGLE_CLIENT_ID=your_client_id
-GOOGLE_CLIENT_SECRET=your_client_secret
-GOOGLE_REDIRECT_URI=http://localhost/google-calendar/callback
 ```
 
 ## Project Structure
@@ -192,49 +170,6 @@ g-sched/
 - `activity_logs` - System activity logs
 - `system_settings` - Configurable system settings
 
-## Security Features
-
-- Password hashing with bcrypt
-- CSRF protection on all forms
-- SQL injection prevention via Eloquent ORM
-- XSS prevention with Blade templating
-- Role-based authorization middleware
-- Session protection
-- Input validation (server-side and client-side)
-
-## Development
-
-### Running tests
-```bash
-php artisan test
-```
-
-### Code style
-```bash
-./vendor/bin/pint
-```
-
-### Database refresh
-```bash
-php artisan migrate:fresh --seed
-```
-
-## Production Deployment
-
-1. Set `APP_ENV=production` and `APP_DEBUG=false`
-2. Generate a strong `APP_KEY`
-3. Configure production database
-4. Set up queue workers for background jobs:
-   ```bash
-   php artisan queue:work
-   ```
-5. Set up task scheduler for reminders:
-   ```bash
-   * * * * * cd /path/to/g-sched && php artisan schedule:run >> /dev/null 2>&1
-   ```
-6. Configure proper mail settings
-7. Set up SSL/HTTPS
-8. Configure file permissions
 
 ## License
 
